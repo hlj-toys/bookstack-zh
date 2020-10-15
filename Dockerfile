@@ -10,6 +10,4 @@ RUN \
   apk add --update font-adobe-100dpi ttf-dejavu fontconfig && \
   rm -rf /var/cache/apk/*
 
-
-
-
+RUN sed -i "s/\(term.*\), \$inputTerm/\1, '%'.\$inputTerm/" /var/www/html/app/Entities/SearchService.php
